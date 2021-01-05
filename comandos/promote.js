@@ -12,7 +12,7 @@ module.exports.help = {
     module.exports.run = async(client, message, args) => {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No tienes permiso para ejecutar este comando") //si no tiene permiso
         
-         if(!args[0]) return message.channel.send("Ingrese la id del usuario") //si no puso una ID
+         if(!args[0]) return message.channel.send("Ingrese el nombre el usuario") //si no puso una ID
   
         try {
 await roblox.setCookie(kukis) //conectamos a roblox
@@ -20,9 +20,10 @@ await roblox.setCookie(kukis) //conectamos a roblox
             message.channel.send("ocurrio un error:" +error) //si da error
         }
 try {
-        let promo = await roblox.promote(grupoID,args[0] ) //lo promovemos
-        let avatar = await roblox.getPlayerInfo(args[0])
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [args[0]], size: 100, format: "jpeg",  isCircular: true})
+    let ids = await roblox.getIdFromUsername(args[0])
+        let promo = await roblox.promote(grupoID,ids ) //lo promovemos
+        let avatar = await roblox.getPlayerInfo(ids)
+        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
         //mensaje bmnito
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
