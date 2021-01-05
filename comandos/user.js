@@ -6,12 +6,12 @@ const {grupoID, kukis}= require("../config.json")
 
 module.exports.help = {
     name: "user", 
-    descripcion: "sube de rol a un usuario",
+    descripcion: "userinfo",
     }
 //cuando se ejecuta pasa esto..
     module.exports.run = async(client, message, args) => {
         
-         if(!args[0]) return message.channel.send("Ingrese la id del usuario") //si no puso una ID
+         if(!args[0]) return message.channel.send("Ingrese el nombre de usuario") //si no puso un nombre
   
         try {
 await roblox.setCookie(kukis) //conectamos a roblox
@@ -19,8 +19,9 @@ await roblox.setCookie(kukis) //conectamos a roblox
             message.channel.send("ocurrio un error:" +error) //si da error
         }
 try {
+    let ids = await roblox.getIdFromUsername(args[0])
         let avatar = await roblox.getPlayerInfo(args[0])
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [args[0]], size: 100, format: "jpeg",  isCircular: true})
+        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
         //mensaje bmnito
     
         const embed = new Discord.MessageEmbed()
