@@ -16,4 +16,5 @@ a donde dice kukis debe poner su cookie especial para logearse en roblox si no s
 No sabemos a ciencia cierta si las cookies de Roblox expiran. Roblox no nos ha informado sobre este hecho, por lo que estamos prácticamente en la oscuridad.
 
 Le recomendamos que actualice sus cookies en un entorno de producción no más de una vez cada 24 horas. Sin embargo, varios usuarios han notado últimamente que han tenido cookies durante varios meses, lo que significa que puede optar por no actualizar su cookie.
-mas informacion: https://noblox.js.org/
+
+mas en informacion: https://noblox.js.org/
