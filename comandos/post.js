@@ -38,7 +38,7 @@ try {
         
         
 } catch (err) {
-    message.channel.send("Ocurrio un error verifique la ID o si hay fondo disponible" + "\n error: \n"+err) //error
+    message.channel.send("Ocurrio un error " + "\n error: \n"+err) //error
 }
 
  
