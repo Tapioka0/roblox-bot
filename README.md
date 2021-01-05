@@ -11,3 +11,9 @@ a donde dice kukis debe poner su cookie especial para logearse en roblox si no s
 5- Coloque este token completo, incluida la advertencia, en cookieLogin:rbx.setCookie( tokenHere )
 
 **Consulte [Caducidad](https://noblox.js.org/index.html#cookie-expiration) de las cookies para obtener una discusión detallada sobre la caducidad de las cookies.**
+##Cadudicad de la cookie
+
+No sabemos a ciencia cierta si las cookies de Roblox expiran. Roblox no nos ha informado sobre este hecho, por lo que estamos prácticamente en la oscuridad.
+
+Le recomendamos que actualice sus cookies en un entorno de producción no más de una vez cada 24 horas. Sin embargo, varios usuarios han notado últimamente que han tenido cookies durante varios meses, lo que significa que puede optar por no actualizar su cookie.
+fuente: https://noblox.js.org/
