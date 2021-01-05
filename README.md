@@ -1,4 +1,4 @@
-# roblox-asd-bot
+# roblox-bot
 la configuracion es sencilla solo tiene que ir al archivo llamado config.json 
 y poner tus datos ahi y listo a disfrutras
 # sobre los cookies
