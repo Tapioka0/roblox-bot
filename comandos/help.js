@@ -12,7 +12,7 @@ module.exports.help = {
         //mensaje bonito
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
-        .addField(`Esta es mi lista de comandos`, `\`\`\`promote    demote  post  pay\`\`\``)
+        .addField(`Esta es mi lista de comandos`, `\`\`\`promote    demote  post  pay  user\`\`\``)
         .setColor("BLACK")
         .setTimestamp()
         .setFooter(`mi prefix es: ${prefix}`)
