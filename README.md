@@ -17,4 +17,4 @@ No sabemos a ciencia cierta si las cookies de Roblox expiran. Roblox no nos ha i
 
 Le recomendamos que actualice sus cookies en un entorno de producción no más de una vez cada 24 horas. Sin embargo, varios usuarios han notado últimamente que han tenido cookies durante varios meses, lo que significa que puede optar por no actualizar su cookie.
 
-mas en informacion: https://noblox.js.org/
+mas informacion en: https://noblox.js.org/
