@@ -13,7 +13,7 @@ module.exports.help = {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No tienes permiso para ejecutar este comando") //si no tiene permiso
         if(message.author.id != OwnerID) return message.channel.send("solo el owner puede usar esto!")
         
-         if(!args[0]) return message.channel.send("Ingrese la id del usuario") //si no puso id
+         if(!args[0]) return message.channel.send("Ingrese el nombre del usuario") //si no puso id
          if(!args[1]) return message.channel.send("Ingrese el monto a pagar") 
   
         try {
@@ -22,9 +22,10 @@ await roblox.setCookie(kukis) //conectamos a roblox
             message.channel.send("ocurrio un error:" +error) //error
         }
 try {
-        let paymen = await roblox.groupPayout(grupoID,args[0], args[1] ) //le pagamos
-        let avatar = await roblox.getPlayerInfo(args[0])
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [args[0]], size: 100, format: "jpeg",  isCircular: true})
+    let ids = await roblox.getIdFromUsername(args[0])
+        let paymen = await roblox.groupPayout(grupoID,ids, args[1] ) //le pagamos
+        let avatar = await roblox.getPlayerInfo(ids)
+        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
        
         //mensaje bo0nito
         
