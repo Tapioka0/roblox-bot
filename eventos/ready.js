@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const roblox = require("noblox.js")
 const {grupoID, kukis, logschannelID}= require("../config.json")
 module.exports = async (client) => {
-  /*
+  
   //modifica lo que gustes
 let ala = await client.channels.fetch(logschannelID)
 await roblox.setCookie(kukis)
@@ -62,7 +62,7 @@ ala.send(embed)
 
     console.log(data)
    })
-*/
+
     await console.log(`
     ____________________\n
     Client: ${client.user.tag}\n
