@@ -22,15 +22,15 @@ await roblox.setCookie(kukis) //conectamos a roblox
 try {
     let ids = await roblox.getIdFromUsername(args[0])
         let promo = await roblox.promote(grupoID,ids ) //lo promovemos
-        let avatar = await roblox.getPlayerInfo(ids)
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
+       // let avatar = await roblox.getPlayerInfo({userId: ids})
+       // let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
         //mensaje bmnito
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
-        .addField(`El usuario: ${avatar.username}fue promovid@ `, `Rango anterior: \`${promo.oldRole.name}\`,\n rank: \`${promo.oldRole.rank}\`, \n **Ahora** \n Nuevo Rango: \`${promo.newRole.name}\`, \n rank:\`${promo.newRole.rank}\``)
+        .addField(`El usuario fue promovid@ `, `Rango anterior: \`${promo.oldRole.name}\`,\n rank: \`${promo.oldRole.rank}\`, \n **Ahora** \n Nuevo Rango: \`${promo.newRole.name}\`, \n rank:\`${promo.newRole.rank}\``)
         .setColor("BLACK")
         .setTimestamp()
-        .setThumbnail(thumbnails[0].imageUrl)
+       // .setThumbnail(thumbnails[0].imageUrl)
         .setFooter(`Miembros en total (Nuevo rango): ${promo.newRole.memberCount}`)
         ///
         message.channel.send(embed) //lo enviamos
