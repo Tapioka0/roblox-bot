@@ -24,17 +24,17 @@ await roblox.setCookie(kukis) //conectamos a roblox
 try {
     let ids = await roblox.getIdFromUsername(args[0])
         let paymen = await roblox.groupPayout(grupoID,ids, args[1] ) //le pagamos
-        let avatar = await roblox.getPlayerInfo(ids)
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
+       // let avatar = await roblox.getPlayerInfo({userId: ids})
+        //let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
        
         //mensaje bo0nito
         
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
-        .addField(`El usuario: ${avatar.username} fue pagado`, `Monto pagado: \`${args[1]}\` Robux`)
+        .addField(`El usuario fue pagado`, `Monto pagado: \`${args[1]}\` Robux`)
         .setColor("BLACK")
         .setTimestamp()
-        .setThumbnail(thumbnails[0].imageUrl)
+        //.setThumbnail(thumbnails[0].imageUrl)
         .setFooter(`Persona responsable: ${message.author.username}`)
         //
         message.channel.send(embed) //lo enviamos
