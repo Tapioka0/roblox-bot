@@ -22,15 +22,15 @@ await roblox.setCookie(kukis) //conectamos a roblox
 try {
     let ids = await roblox.getIdFromUsername(args[0])
         let promo = await roblox.demote(grupoID,ids) //lo degradamos
-        let avatar = await roblox.getPlayerInfo(ids)
-        let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
+        //let avatar = await roblox.getPlayerInfo({userId: ids})
+        //let thumbnails = await roblox.getPlayerThumbnail({userIds: [ids], size: 100, format: "jpeg",  isCircular: true})
         //mensaje bo0nito
-        console.log( thumbnails)
+       
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
-        .addField(`El usuario: ${avatar.username} fue degradad@ `, `Rango anterior: \`${promo.oldRole.name}\`,\n rank: \`N°${promo.oldRole.rank}\`, \n **Ahora** \n Nuevo Rango: \`${promo.newRole.name}\`, \n rank: \`N°${promo.newRole.rank}\``)
+        .addField(`El usuario fue degradad@ `, `Rango anterior: \`${promo.oldRole.name}\`,\n rank: \`N°${promo.oldRole.rank}\`, \n **Ahora** \n Nuevo Rango: \`${promo.newRole.name}\`, \n rank: \`N°${promo.newRole.rank}\``)
         .setColor("BLACK")
-        .setThumbnail(thumbnails[0].imageUrl)
+        //.setThumbnail(thumbnails[0].imageUrl)
         .setTimestamp()
         .setFooter(`Miembros en total (Nuevo rango): ${promo.newRole.memberCount}`)
         //
