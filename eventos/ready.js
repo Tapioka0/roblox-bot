@@ -4,7 +4,7 @@ const {grupoID, kukis, logschannelID}= require("../config.json")
 module.exports = async (client) => {
   
   //modifica lo que gustes
-let ala = await client.channels.fetch(logschannelID)
+let ala = await client.channels.cache.get(logschannelID)
 await roblox.setCookie(kukis)
   roblox.onAuditLog(grupoID).on("data", function(data) {
     if(data.actionType == "Change Rank") {
@@ -60,9 +60,9 @@ ala.send(embed)
 
     }
 
-    console.log(data)
+ 
    })
-
+ 
     await console.log(`
     ____________________\n
     Client: ${client.user.tag}\n
