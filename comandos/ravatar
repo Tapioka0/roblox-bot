@@ -1,0 +1,57 @@
+const Discord = require("discord.js");
+const roblox = require("noblox.js");
+//la exportacion
+
+const { grupoID, kukis, OwnerID } = require("../config.json");
+module.exports.help = {
+  name: "ravatar"
+};
+//cuando se ejecuta pasa esto..
+module.exports.run = async (client, message, args) => {
+  console.log("si");
+
+  if (!args[0]) return message.channel.send("Enter the user id"); //si no puso id
+
+  try {
+    await roblox.setCookie(kukis); //conectamos a roblox
+  } catch (error) {
+    message.channel.send("an error occurred: (cookies)" + error); //error
+  }
+  try {
+    let ids = await roblox.getIdFromUsername(args[0]);
+    let thumbnails = await roblox.getPlayerThumbnail({
+      userIds: [ids],
+      size: 720,
+      format: "jpeg",
+      isCircular: true
+    });
+    let information = await roblox.getPlayerInfo({ userId: ids });
+    let status = await roblox.getFriends(ids);
+    let f = await roblox.getFollowers(ids, "Asc", 100);
+    var se = f.data.length;
+    if (se >= 100) se = f.data.length + "+";
+    console.log(status.data.length);
+    console.log(se);
+    const embed = new Discord.MessageEmbed()
+      .setAuthor(`Perfil de ${information.username}`)
+      .addField(`Amigos`, information.username, true)
+      .setThumbnail(thumbnails[0].imageUrl)
+      .addField(`Estado`, information.status)
+      .addField(
+        `Links`,
+        `[Perfil](https://www.roblox.com/users/${
+          args[0]
+        }/profile)  | [Descargar Imagen](${thumbnails[0].imageUrl})`
+      )
+      .setColor("BLACK")
+      .setTimestamp()
+
+      .setFooter(`Person in charge: ${message.author.username}`);
+    //
+    message.channel.send(embed); //lo enviamos*/
+
+    message.channel.send(thumbnails[0].imageUrl); //lo enviamos
+  } catch (err) {
+    message.channel.send("An error occurred (slight)" + "\n error: \n" + err); //error
+  }
+};
